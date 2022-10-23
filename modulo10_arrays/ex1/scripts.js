@@ -13,18 +13,25 @@ const hitchedSpaceships = [
 ]
 
 
-let maisDeNoveTripulantes = hitchedSpaceships.filter(nave => {return nave[1] > 9})
+let maisDeNoveTripulantes = hitchedSpaceships.filter(spaceship => {
+  return spaceship[1] > 9
+}).map(spaceship => {
+  return spaceship[0]
+})
+
+
 console.log(maisDeNoveTripulantes)
 
-let engatePendente = hitchedSpaceships.filter(nave => {return nave[2] ? false:true} )
+let engatePendente = hitchedSpaceships.findIndex(spaceship => {
+  return spaceship[2] == false} )
 console.log(engatePendente)
 
-let nomesMaiusculos = hitchedSpaceships.map(function(nomesMaiusculos){
-  let maiusculo = nomesMaiusculos[0].toUpperCase()
+let upperCased = hitchedSpaceships.map(function(upperCased){
+  let maiusculo = upperCased[0].toUpperCase()
   return maiusculo
 })
 
-console.log(nomesMaiusculos)
+console.log(upperCased)
 
 
-alert(`Naves com mais de 9 tripulantes: ${maisDeNoveTripulantes}\nEngate pendente: ${engatePendente}\nNomes em maiúsculo: ${nomesMaiusculos}`)
+alert(`Naves com mais de 9 tripulantes: ${maisDeNoveTripulantes}\nEngate pendente: ${engatePendente}\nNomes em maiúsculo: ${upperCased}`)
